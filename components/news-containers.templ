@@ -2,7 +2,7 @@ package components
 
 import "github.com/semper-proficiens/dev-briefs/types"
 
-templ News(news []types.NewsItem) {
+templ NewsContainers(news []types.NewsItem) {
     for _, v := range news {
         <div class="news-item max-w-md pl-2 mb-4 bg-white rounded-md shadow-md">
             <h2 class="text-l font-bold mb-2"><a href={ templ.URL(v.URL) } class="text-blue-500 hover:underline">{v.Title}</a></h2>

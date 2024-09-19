@@ -53,7 +53,7 @@ func NewsHandler(w http.ResponseWriter, r *http.Request) {
 			news = append(news, item)
 		}
 
-		if err = components.News(news).Render(r.Context(), w); err != nil {
+		if err = components.NewsContainers(news).Render(r.Context(), w); err != nil {
 			http.Error(w, customErrorMessage, http.StatusInternalServerError)
 			return
 		}
@@ -67,7 +67,6 @@ func NewsHandler(w http.ResponseWriter, r *http.Request) {
 func CollapseDivHandler(w http.ResponseWriter, r *http.Request) {
 	if strings.Contains(r.Header.Get("HX-Request"), "true") {
 		id := chi.URLParam(r, "id")
-		log.Println("Grabbed collapse id:", id)
 		components.EmptyDiv(id).Render(r.Context(), w)
 	} else {
 		// Redirect to the main page if accessed directly
