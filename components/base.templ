@@ -1,0 +1,19 @@
+package components
+
+templ Base(nav bool) {
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>News</title>
+        <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-gray-100">
+        if nav {
+            @Nav()
+        }
+        { children... }
+    </body>
+    </html>
+}

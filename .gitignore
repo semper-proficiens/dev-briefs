@@ -22,5 +22,9 @@ bin/
 go.work
 go.work.sum
 
+# Templ
+*_templ.go*
+*_templ.txt
+
 # env file
 .env
